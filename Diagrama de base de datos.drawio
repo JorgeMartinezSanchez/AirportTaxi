@@ -416,7 +416,7 @@
         <mxCell id="aqoaDJ9bYYyRj5IXu0c5-178" parent="aqoaDJ9bYYyRj5IXu0c5-165" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" value="fecha_de_publicacion: datetime" vertex="1">
           <mxGeometry height="30" width="230" y="360" as="geometry" />
         </mxCell>
-        <mxCell id="aqoaDJ9bYYyRj5IXu0c5-179" parent="1" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" value="pasajero" vertex="1">
+        <mxCell id="aqoaDJ9bYYyRj5IXu0c5-179" parent="1" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" value="PASAJERO" vertex="1">
           <mxGeometry height="120" width="230" x="840" y="2290" as="geometry" />
         </mxCell>
         <mxCell id="aqoaDJ9bYYyRj5IXu0c5-180" parent="aqoaDJ9bYYyRj5IXu0c5-179" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" value="usuario_id: int (PK)" vertex="1">
