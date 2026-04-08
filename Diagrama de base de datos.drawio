@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36">
   <diagram name="Página-1" id="gW9qO8yXCg6vHNfG2JhA">
-    <mxGraphModel dx="3402" dy="1450" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="2887" dy="1160" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -459,7 +459,7 @@
         <mxCell id="aqoaDJ9bYYyRj5IXu0c5-201" parent="aqoaDJ9bYYyRj5IXu0c5-194" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" value="apellido: string" vertex="1">
           <mxGeometry height="30" width="230" y="210" as="geometry" />
         </mxCell>
-        <mxCell id="aqoaDJ9bYYyRj5IXu0c5-202" parent="aqoaDJ9bYYyRj5IXu0c5-194" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" value="rol: string" vertex="1">
+        <mxCell id="aqoaDJ9bYYyRj5IXu0c5-202" parent="aqoaDJ9bYYyRj5IXu0c5-194" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" value="rol: enum" vertex="1">
           <mxGeometry height="30" width="230" y="240" as="geometry" />
         </mxCell>
         <mxCell id="aqoaDJ9bYYyRj5IXu0c5-203" parent="aqoaDJ9bYYyRj5IXu0c5-194" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" value="estado_verificacion: enum" vertex="1">
