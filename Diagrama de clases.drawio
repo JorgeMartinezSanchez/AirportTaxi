@@ -710,6 +710,15 @@
             </Array>
           </mxGeometry>
         </mxCell>
+        <mxCell id="-2ysB1SWrT1VvMKSyXPt-351" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="-2ysB1SWrT1VvMKSyXPt-276" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endSize=12;endArrow=open;endFill=0;dashed=1;" target="-2ysB1SWrT1VvMKSyXPt-143">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1060" y="-197" />
+              <mxPoint x="1060" y="-1380" />
+              <mxPoint x="-275" y="-1380" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
         <mxCell id="-2ysB1SWrT1VvMKSyXPt-276" parent="WIyWlLk6GJQsqaUBKTNV-1" style="swimlane;fontStyle=2;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;rounded=0;shadow=0;strokeWidth=1;" value="Vehicule" vertex="1">
           <mxGeometry height="195.25" width="160" x="-354.5" y="-295.25" as="geometry">
             <mxRectangle height="26" width="160" x="130" y="380" as="alternateBounds" />
