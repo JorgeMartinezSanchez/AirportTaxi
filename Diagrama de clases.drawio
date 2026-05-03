@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36">
   <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
-    <mxGraphModel dx="4132" dy="1596" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="5025" dy="2059" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="WIyWlLk6GJQsqaUBKTNV-0" />
         <mxCell id="WIyWlLk6GJQsqaUBKTNV-1" parent="WIyWlLk6GJQsqaUBKTNV-0" />
@@ -665,7 +665,7 @@
           <mxGeometry height="26" width="258.25" y="60" as="geometry" />
         </mxCell>
         <mxCell id="-2ysB1SWrT1VvMKSyXPt-491" parent="WIyWlLk6GJQsqaUBKTNV-1" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=34;fillColor=none;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" value="&lt;div&gt;&lt;i&gt;&amp;lt;&amp;lt;Interface&amp;gt;&amp;gt;&lt;/i&gt;&lt;/div&gt;&lt;i&gt;IOrderService&lt;/i&gt;" vertex="1">
-          <mxGeometry height="138" width="375" x="-2640" y="-250" as="geometry" />
+          <mxGeometry height="138" width="375" x="-2640" y="-237" as="geometry" />
         </mxCell>
         <mxCell id="-2ysB1SWrT1VvMKSyXPt-492" parent="-2ysB1SWrT1VvMKSyXPt-491" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="createOrder(&lt;span style=&quot;white-space: nowrap;&quot;&gt;orderDto: OrderRequestDTO&lt;/span&gt;): OrderResponseDTO" vertex="1">
           <mxGeometry height="26" width="375" y="34" as="geometry" />
@@ -676,7 +676,7 @@
         <mxCell id="-2ysB1SWrT1VvMKSyXPt-662" parent="-2ysB1SWrT1VvMKSyXPt-491" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" value="deleteOrder(orderDto: OrderRequestDTO): void" vertex="1">
           <mxGeometry height="26" width="375" y="86" as="geometry" />
         </mxCell>
-        <mxCell id="-2ysB1SWrT1VvMKSyXPt-494" parent="-2ysB1SWrT1VvMKSyXPt-491" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" value="calculateFee(cargo: Cargo, distance: Distance): void" vertex="1">
+        <mxCell id="-2ysB1SWrT1VvMKSyXPt-494" parent="-2ysB1SWrT1VvMKSyXPt-491" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" value="calculateFee(cargo: Cargo, distance: Distance): decimal" vertex="1">
           <mxGeometry height="26" width="375" y="112" as="geometry" />
         </mxCell>
         <mxCell id="-2ysB1SWrT1VvMKSyXPt-508" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="-2ysB1SWrT1VvMKSyXPt-495" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=0;endSize=12;dashed=1;" target="-2ysB1SWrT1VvMKSyXPt-491">
@@ -686,7 +686,7 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="-2ysB1SWrT1VvMKSyXPt-495" parent="WIyWlLk6GJQsqaUBKTNV-1" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;rounded=0;shadow=0;strokeWidth=1;" value="OrderService" vertex="1">
-          <mxGeometry height="138" width="366" x="-2188" y="-250" as="geometry">
+          <mxGeometry height="164" width="366" x="-2188" y="-250" as="geometry">
             <mxRectangle height="26" width="170" x="340" y="380" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
@@ -704,6 +704,9 @@
         </mxCell>
         <mxCell id="-2ysB1SWrT1VvMKSyXPt-507" parent="-2ysB1SWrT1VvMKSyXPt-495" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" value="+ deleteOrder(orderDto: OrderRequestDTO): void" vertex="1">
           <mxGeometry height="26" width="366" y="112" as="geometry" />
+        </mxCell>
+        <mxCell id="-2ysB1SWrT1VvMKSyXPt-670" parent="-2ysB1SWrT1VvMKSyXPt-495" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" value="+ calculateFee(cargo: Cargo, distance: double): decimal" vertex="1">
+          <mxGeometry height="26" width="366" y="138" as="geometry" />
         </mxCell>
         <mxCell id="-2ysB1SWrT1VvMKSyXPt-513" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="-2ysB1SWrT1VvMKSyXPt-509" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=0;endSize=12;" target="-2ysB1SWrT1VvMKSyXPt-452">
           <mxGeometry relative="1" as="geometry">
