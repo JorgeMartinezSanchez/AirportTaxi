@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36">
   <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
-    <mxGraphModel dx="10175" dy="4382" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="8458" dy="3579" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="WIyWlLk6GJQsqaUBKTNV-0" />
         <mxCell id="WIyWlLk6GJQsqaUBKTNV-1" parent="WIyWlLk6GJQsqaUBKTNV-0" />
@@ -1225,7 +1225,7 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="zE-muMvbbYAmUk3vm6k0-7" parent="WIyWlLk6GJQsqaUBKTNV-1" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;rounded=0;shadow=0;strokeWidth=1;" value="RealDispute" vertex="1">
-          <mxGeometry height="242" width="190" x="-1000" y="453" as="geometry">
+          <mxGeometry height="242" width="190" x="-1001.75" y="413" as="geometry">
             <mxRectangle height="26" width="170" x="340" y="380" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
@@ -1419,7 +1419,7 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="zE-muMvbbYAmUk3vm6k0-95" parent="WIyWlLk6GJQsqaUBKTNV-1" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;rounded=0;shadow=0;strokeWidth=1;" value="DisputeService" vertex="1">
-          <mxGeometry height="140" width="416" x="-537.44" y="743" as="geometry">
+          <mxGeometry height="140" width="416" x="-537.44" y="700" as="geometry">
             <mxRectangle height="26" width="170" x="340" y="380" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
@@ -1454,7 +1454,7 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="zE-muMvbbYAmUk3vm6k0-103" parent="WIyWlLk6GJQsqaUBKTNV-1" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;rounded=0;shadow=0;strokeWidth=1;" value="DisputeProxy" vertex="1">
-          <mxGeometry height="216" width="420" x="-794" y="453" as="geometry">
+          <mxGeometry height="216" width="420" x="-794" y="398" as="geometry">
             <mxRectangle height="26" width="170" x="340" y="380" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
@@ -1544,8 +1544,8 @@
         <mxCell id="zE-muMvbbYAmUk3vm6k0-152" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="zE-muMvbbYAmUk3vm6k0-95" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=open;endFill=0;endSize=12;dashed=1;" target="zE-muMvbbYAmUk3vm6k0-39">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="-704" y="789" />
-              <mxPoint x="-704" y="789" />
+              <mxPoint x="-780" y="750" />
+              <mxPoint x="-780" y="750" />
             </Array>
           </mxGeometry>
         </mxCell>
