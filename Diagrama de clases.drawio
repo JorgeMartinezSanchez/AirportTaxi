@@ -287,7 +287,7 @@
           <mxGeometry height="26" width="160" y="242" as="geometry" />
         </mxCell>
         <mxCell id="87FmYJl_rebG3nU3hTez-37" parent="WIyWlLk6GJQsqaUBKTNV-1" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=34;fillColor=none;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" value="&lt;div&gt;&lt;i&gt;&amp;lt;&amp;lt;Interface&amp;gt;&amp;gt;&lt;/i&gt;&lt;/div&gt;&lt;i&gt;IPasswordHasherService&lt;/i&gt;" vertex="1">
-          <mxGeometry height="60" width="180" x="-2441.75" y="-771.75" as="geometry" />
+          <mxGeometry height="60" width="180" x="-2441.75" y="-750" as="geometry" />
         </mxCell>
         <mxCell id="87FmYJl_rebG3nU3hTez-38" parent="87FmYJl_rebG3nU3hTez-37" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="hash(string password): string" vertex="1">
           <mxGeometry height="26" width="180" y="34" as="geometry" />
@@ -299,7 +299,7 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="87FmYJl_rebG3nU3hTez-44" parent="WIyWlLk6GJQsqaUBKTNV-1" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;rounded=0;shadow=0;strokeWidth=1;" value="PasswordHasherService" vertex="1">
-          <mxGeometry height="62.5" width="180" x="-2200" y="-773" as="geometry">
+          <mxGeometry height="62.5" width="180" x="-2200" y="-752.5" as="geometry">
             <mxRectangle height="26" width="160" x="130" y="380" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
