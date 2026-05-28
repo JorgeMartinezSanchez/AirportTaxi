@@ -1,0 +1,156 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Arquitectura" id="arch-diagram">
+    <mxGraphModel dx="2575" dy="1335" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="l1" parent="1" style="swimlane;startSize=36;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontSize=12;horizontal=1;" value="&lt;&lt;layer&gt;&gt; Cliente / Presentación" vertex="1">
+          <mxGeometry height="120" width="1200" x="170" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="webapp" parent="l1" style="shape=component;align=left;spacingLeft=36;fillColor=#ffffff;strokeColor=#6c8ebf;" value="&lt;&lt;component&gt;&gt;&#xa;Web App&#xa;(consume REST API)" vertex="1">
+          <mxGeometry height="60" width="200" x="200" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="mobileapp" parent="l1" style="shape=component;align=left;spacingLeft=36;fillColor=#ffffff;strokeColor=#6c8ebf;" value="&lt;&lt;component&gt;&gt;&#xa;Mobile App&#xa;(consume REST API)" vertex="1">
+          <mxGeometry height="60" width="200" x="500" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="arr1" edge="1" parent="1" source="l1" style="edgeStyle=orthogonalEdgeStyle;dashed=1;endArrow=open;endFill=0;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="l2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="l2" parent="1" style="swimlane;startSize=36;fillColor=#e1d5e7;strokeColor=#9673a6;fontStyle=1;fontSize=12;" value="&lt;&lt;layer&gt;&gt; Proxy / Seguridad" vertex="1">
+          <mxGeometry height="120" width="1200" x="170" y="230" as="geometry" />
+        </mxCell>
+        <mxCell id="userproxy" parent="l2" style="shape=component;align=left;spacingLeft=36;fillColor=#ffffff;strokeColor=#9673a6;" value="&lt;&lt;component&gt;&gt;&#xa;UserProxy&#xa;isAllowed(): bool" vertex="1">
+          <mxGeometry height="60" width="200" x="100" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="disputeproxy" parent="l2" style="shape=component;align=left;spacingLeft=36;fillColor=#ffffff;strokeColor=#9673a6;" value="&lt;&lt;component&gt;&gt;&#xa;DisputeProxy&#xa;isPassenger / isAdmin" vertex="1">
+          <mxGeometry height="60" width="210" x="380" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="hasher" parent="l2" style="shape=component;align=left;spacingLeft=36;fillColor=#ffffff;strokeColor=#9673a6;" value="&lt;&lt;component&gt;&gt;&#xa;PasswordHasherService&#xa;hash(pwd): string" vertex="1">
+          <mxGeometry height="60" width="220" x="670" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="arr2" edge="1" parent="1" source="l2" style="edgeStyle=orthogonalEdgeStyle;dashed=1;endArrow=open;endFill=0;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="l3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="l3" parent="1" style="swimlane;startSize=36;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1;fontSize=12;" value="&lt;&lt;layer&gt;&gt; Application Services" vertex="1">
+          <mxGeometry height="140" width="1200" x="170" y="410" as="geometry" />
+        </mxCell>
+        <mxCell id="userservice" parent="l3" style="shape=component;align=left;spacingLeft=36;fillColor=#ffffff;strokeColor=#82b366;" value="&lt;&lt;component&gt;&gt;&#xa;UserService&#xa;CRUD usuarios" vertex="1">
+          <mxGeometry height="60" width="180" x="40" y="45" as="geometry" />
+        </mxCell>
+        <mxCell id="orderservice" parent="l3" style="shape=component;align=left;spacingLeft=36;fillColor=#ffffff;strokeColor=#82b366;" value="&lt;&lt;component&gt;&gt;&#xa;OrderService&#xa;gestión de viajes" vertex="1">
+          <mxGeometry height="60" width="180" x="260" y="45" as="geometry" />
+        </mxCell>
+        <mxCell id="vehicleservice" parent="l3" style="shape=component;align=left;spacingLeft=36;fillColor=#ffffff;strokeColor=#82b366;" value="&lt;&lt;component&gt;&gt;&#xa;VehicleService&#xa;CRUD vehículos" vertex="1">
+          <mxGeometry height="60" width="180" x="480" y="45" as="geometry" />
+        </mxCell>
+        <mxCell id="disputeservice" parent="l3" style="shape=component;align=left;spacingLeft=36;fillColor=#ffffff;strokeColor=#82b366;" value="&lt;&lt;component&gt;&gt;&#xa;DisputeService&#xa;gestión disputas" vertex="1">
+          <mxGeometry height="60" width="180" x="700" y="45" as="geometry" />
+        </mxCell>
+        <mxCell id="paymentcomp" parent="l3" style="shape=component;align=left;spacingLeft=36;fillColor=#ffffff;strokeColor=#82b366;" value="&lt;&lt;component&gt;&gt;&#xa;PaymentMethod&#xa;Strategy: Cash / CreditCard" vertex="1">
+          <mxGeometry height="60" width="220" x="920" y="45" as="geometry" />
+        </mxCell>
+        <mxCell id="arr3" edge="1" parent="1" source="l3" style="edgeStyle=orthogonalEdgeStyle;dashed=1;endArrow=open;endFill=0;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="l4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="l4" parent="1" style="swimlane;startSize=36;fillColor=#fff2cc;strokeColor=#d6b656;fontStyle=1;fontSize=12;" value="&lt;&lt;layer&gt;&gt; Domain — Models, State Machines &amp; Factories" vertex="1">
+          <mxGeometry height="230" width="1200" x="170" y="610" as="geometry" />
+        </mxCell>
+        <mxCell id="lbl-models" parent="l4" style="text;fontStyle=2;fontSize=10;align=left;" value="Modelos de dominio" vertex="1">
+          <mxGeometry height="20" width="160" x="20" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="m-user" parent="l4" style="rounded=1;fillColor=#fffacd;strokeColor=#d6b656;fontSize=11;" value="User" vertex="1">
+          <mxGeometry height="34" width="90" x="20" y="62" as="geometry" />
+        </mxCell>
+        <mxCell id="m-driver" parent="l4" style="rounded=1;fillColor=#fffacd;strokeColor=#d6b656;fontSize=11;" value="ConDriver" vertex="1">
+          <mxGeometry height="34" width="100" x="122" y="62" as="geometry" />
+        </mxCell>
+        <mxCell id="m-pass" parent="l4" style="rounded=1;fillColor=#fffacd;strokeColor=#d6b656;fontSize=11;" value="ConPassanger" vertex="1">
+          <mxGeometry height="34" width="120" x="234" y="62" as="geometry" />
+        </mxCell>
+        <mxCell id="m-admin" parent="l4" style="rounded=1;fillColor=#fffacd;strokeColor=#d6b656;fontSize=11;" value="Admin" vertex="1">
+          <mxGeometry height="34" width="90" x="366" y="62" as="geometry" />
+        </mxCell>
+        <mxCell id="m-vehicle" parent="l4" style="rounded=1;fillColor=#fffacd;strokeColor=#d6b656;fontSize=11;" value="Vehicle" vertex="1">
+          <mxGeometry height="34" width="90" x="468" y="62" as="geometry" />
+        </mxCell>
+        <mxCell id="m-order" parent="l4" style="rounded=1;fillColor=#fffacd;strokeColor=#d6b656;fontSize=11;" value="TripOrder" vertex="1">
+          <mxGeometry height="34" width="100" x="570" y="62" as="geometry" />
+        </mxCell>
+        <mxCell id="m-dispute" parent="l4" style="rounded=1;fillColor=#fffacd;strokeColor=#d6b656;fontSize=11;" value="Dispute" vertex="1">
+          <mxGeometry height="34" width="90" x="682" y="62" as="geometry" />
+        </mxCell>
+        <mxCell id="lbl-states" parent="l4" style="text;fontStyle=2;fontSize=10;align=left;" value="State Pattern" vertex="1">
+          <mxGeometry height="20" width="120" x="20" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="s-driver" parent="l4" style="rounded=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=10;" value="DriverState&#xa;Offline / Available / Busy / Suspended" vertex="1">
+          <mxGeometry height="44" width="260" x="20" y="130" as="geometry" />
+        </mxCell>
+        <mxCell id="s-order" parent="l4" style="rounded=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=10;" value="OrderState&#xa;Pending / Confirmed / InProgress / Completed / Cancelled" vertex="1">
+          <mxGeometry height="44" width="340" x="294" y="130" as="geometry" />
+        </mxCell>
+        <mxCell id="s-dispute" parent="l4" style="rounded=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=10;" value="DisputeState&#xa;InProcess / Rejected / Done" vertex="1">
+          <mxGeometry height="44" width="220" x="648" y="130" as="geometry" />
+        </mxCell>
+        <mxCell id="lbl-fact" parent="l4" style="text;fontStyle=2;fontSize=10;align=left;" value="Factory Pattern" vertex="1">
+          <mxGeometry height="20" width="120" x="20" y="184" as="geometry" />
+        </mxCell>
+        <mxCell id="f-user" parent="l4" style="rounded=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;" value="UserFactory" vertex="1">
+          <mxGeometry height="24" width="130" x="20" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="f-admin" parent="l4" style="rounded=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;" value="AdminFactory" vertex="1">
+          <mxGeometry height="24" width="130" x="164" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="f-driver" parent="l4" style="rounded=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;" value="DriverFactory" vertex="1">
+          <mxGeometry height="24" width="130" x="308" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="f-passenger" parent="l4" style="rounded=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;" value="PassengerFactory" vertex="1">
+          <mxGeometry height="24" width="140" x="452" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="arr4" edge="1" parent="1" source="l4" style="edgeStyle=orthogonalEdgeStyle;dashed=1;endArrow=open;endFill=0;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="l5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="l5" parent="1" style="swimlane;startSize=36;fillColor=#f8cecc;strokeColor=#b85450;fontStyle=1;fontSize=12;" value="&lt;&lt;layer&gt;&gt; Repository — Interfaces + Implementaciones PostgreSQL" vertex="1">
+          <mxGeometry height="120" width="1200" x="170" y="900" as="geometry" />
+        </mxCell>
+        <mxCell id="r-user" parent="l5" style="shape=component;align=left;spacingLeft=36;fillColor=#ffffff;strokeColor=#b85450;fontSize=10;" value="«interface» IUserRepository&#xa;+ PostgreSQLUserRepository" vertex="1">
+          <mxGeometry height="60" width="230" x="30" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="r-order" parent="l5" style="shape=component;align=left;spacingLeft=36;fillColor=#ffffff;strokeColor=#b85450;fontSize=10;" value="«interface» IOrderRepository&#xa;+ PostgreSQLOrderRepository" vertex="1">
+          <mxGeometry height="60" width="240" x="290" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="r-vehicle" parent="l5" style="shape=component;align=left;spacingLeft=36;fillColor=#ffffff;strokeColor=#b85450;fontSize=10;" value="«interface» IVehicleRepository&#xa;+ PostgreSQLVehicleRepository" vertex="1">
+          <mxGeometry height="60" width="250" x="560" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="r-dispute" parent="l5" style="shape=component;align=left;spacingLeft=36;fillColor=#ffffff;strokeColor=#b85450;fontSize=10;" value="«interface» IDisputeRepository&#xa;+ PostgreSQLDisputeRepository" vertex="1">
+          <mxGeometry height="60" width="250" x="840" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="arr5" edge="1" parent="1" source="l5" style="edgeStyle=orthogonalEdgeStyle;endArrow=ERmandOne;startArrow=none;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="db">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="arr5-lbl" connectable="0" parent="1" style="edgeLabel;fontSize=10;align=center;" value="SQL / EF Core" vertex="1">
+          <mxGeometry relative="0.5" as="geometry">
+            <mxPoint x="130" y="10" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="db" parent="1" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=14;fillColor=#f5f5f5;strokeColor=#666666;fontStyle=1;fontSize=11;" value="&lt;&lt;database&gt;&gt;&#xa;PostgreSQL&#xa;users · drivers · passengers · vehicles · trip_orders · disputes · payments" vertex="1">
+          <mxGeometry height="90" width="500" x="520" y="1090" as="geometry" />
+        </mxCell>
+        <mxCell id="legend" parent="1" style="swimlane;startSize=30;fillColor=#f5f5f5;strokeColor=#999999;fontStyle=1;fontSize=11;dashed=1;" value="Leyenda de patrones" vertex="1">
+          <mxGeometry height="130" width="700" x="170" y="1210" as="geometry" />
+        </mxCell>
+        <mxCell id="leg1" parent="legend" style="text;fontSize=11;align=left;" value="Proxy Pattern → UserProxy, DisputeProxy (control de acceso)" vertex="1">
+          <mxGeometry height="20" width="680" x="10" y="36" as="geometry" />
+        </mxCell>
+        <mxCell id="leg2" parent="legend" style="text;fontSize=11;align=left;" value="State Pattern → DriverState, OrderState, DisputeState (ciclo de vida)" vertex="1">
+          <mxGeometry height="20" width="680" x="10" y="58" as="geometry" />
+        </mxCell>
+        <mxCell id="leg3" parent="legend" style="text;fontSize=11;align=left;" value="Factory Pattern → UserFactory, AdminFactory, DriverFactory, PassengerFactory" vertex="1">
+          <mxGeometry height="20" width="680" x="10" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="leg4" parent="legend" style="text;fontSize=11;align=left;" value="Strategy Pattern → PaymentMethod (Cash / CreditCard)    |    Repository Pattern → IXxxRepository / PostgreSQLXxxRepository" vertex="1">
+          <mxGeometry height="20" width="680" x="10" y="102" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
