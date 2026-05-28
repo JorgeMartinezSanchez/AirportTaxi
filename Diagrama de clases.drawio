@@ -254,7 +254,7 @@
           <mxGeometry height="26" width="400" y="60" as="geometry" />
         </mxCell>
         <mxCell id="87FmYJl_rebG3nU3hTez-30" parent="WIyWlLk6GJQsqaUBKTNV-1" style="swimlane;fontStyle=2;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;rounded=0;shadow=0;strokeWidth=1;" value="User" vertex="1">
-          <mxGeometry height="272" width="160" x="-1593.5" y="-515" as="geometry">
+          <mxGeometry height="245" width="160" x="-1593.5" y="-515" as="geometry">
             <mxRectangle height="26" width="160" x="130" y="380" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
@@ -279,14 +279,11 @@
         <mxCell id="87FmYJl_rebG3nU3hTez-36" parent="87FmYJl_rebG3nU3hTez-30" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontStyle=0" value="- Password: string" vertex="1">
           <mxGeometry height="26" width="160" y="182" as="geometry" />
         </mxCell>
-        <mxCell id="zE-muMvbbYAmUk3vm6k0-25" parent="87FmYJl_rebG3nU3hTez-30" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontStyle=0" value="- Role: string" vertex="1">
-          <mxGeometry height="26" width="160" y="208" as="geometry" />
-        </mxCell>
         <mxCell id="87FmYJl_rebG3nU3hTez-31" parent="87FmYJl_rebG3nU3hTez-30" style="line;html=1;strokeWidth=1;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" value="" vertex="1">
-          <mxGeometry height="8" width="160" y="234" as="geometry" />
+          <mxGeometry height="8" width="160" y="208" as="geometry" />
         </mxCell>
         <mxCell id="jgOOzQi-sakMZ-fJ_ZDo-68" parent="87FmYJl_rebG3nU3hTez-30" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontStyle=2" value="modifyUser(): User" vertex="1">
-          <mxGeometry height="26" width="160" y="242" as="geometry" />
+          <mxGeometry height="26" width="160" y="216" as="geometry" />
         </mxCell>
         <mxCell id="87FmYJl_rebG3nU3hTez-37" parent="WIyWlLk6GJQsqaUBKTNV-1" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=34;fillColor=none;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" value="&lt;div&gt;&lt;i&gt;&amp;lt;&amp;lt;Interface&amp;gt;&amp;gt;&lt;/i&gt;&lt;/div&gt;&lt;i&gt;IPasswordHasherService&lt;/i&gt;" vertex="1">
           <mxGeometry height="60" width="180" x="-2441.75" y="-750" as="geometry" />
@@ -432,7 +429,7 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="jgOOzQi-sakMZ-fJ_ZDo-74" connectable="0" parent="WIyWlLk6GJQsqaUBKTNV-1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];rotation=0;" value="&lt;font style=&quot;font-size: 17px;&quot;&gt;1:1&lt;/font&gt;" vertex="1">
-          <mxGeometry x="-1627.87" y="-347" as="geometry" />
+          <mxGeometry x="-1610" y="-379" as="geometry" />
         </mxCell>
         <mxCell id="-2ysB1SWrT1VvMKSyXPt-351" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endSize=12;endArrow=open;endFill=0;dashed=1;">
           <mxGeometry relative="1" as="geometry">
