@@ -171,8 +171,8 @@
             <Array as="points">
               <mxPoint x="590" y="95" />
               <mxPoint x="590" y="390" />
-              <mxPoint x="810" y="390" />
-              <mxPoint x="810" y="485" />
+              <mxPoint x="890" y="390" />
+              <mxPoint x="890" y="485" />
             </Array>
           </mxGeometry>
         </mxCell>
@@ -193,17 +193,20 @@
         <mxCell id="esx0YZ08hOoJ_0MUZ0mR-59" edge="1" parent="1" source="esx0YZ08hOoJ_0MUZ0mR-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;endArrow=ERzeroToMany;startArrow=ERmandOne;" target="esx0YZ08hOoJ_0MUZ0mR-36">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="590" y="485" />
-              <mxPoint x="590" y="550" />
-              <mxPoint x="810" y="550" />
-              <mxPoint x="810" y="695" />
+              <mxPoint x="560" y="485" />
+              <mxPoint x="560" y="590" />
+              <mxPoint x="840" y="590" />
+              <mxPoint x="840" y="695" />
             </Array>
           </mxGeometry>
         </mxCell>
         <mxCell id="esx0YZ08hOoJ_0MUZ0mR-60" edge="1" parent="1" source="esx0YZ08hOoJ_0MUZ0mR-18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;endArrow=ERzeroToMany;startArrow=ERmandOne;" target="esx0YZ08hOoJ_0MUZ0mR-37">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="1050" y="900" />
+              <mxPoint x="1280" y="245" />
+              <mxPoint x="1280" y="410" />
+              <mxPoint x="950" y="410" />
+              <mxPoint x="950" y="900" />
               <mxPoint x="900" y="900" />
               <mxPoint x="900" y="725" />
             </Array>
@@ -233,6 +236,8 @@
             <Array as="points">
               <mxPoint x="870" y="650" />
               <mxPoint x="870" y="680" />
+              <mxPoint x="1180" y="680" />
+              <mxPoint x="1180" y="945" />
             </Array>
           </mxGeometry>
         </mxCell>
