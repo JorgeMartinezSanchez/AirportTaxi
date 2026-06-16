@@ -21,6 +21,7 @@ Plataforma especializada en traslados al aeropuerto con garantía de puntualidad
 
 ## Estructura del Proyecto
 
+```text
 src/
 ├── main/
 │ ├── java/com/asphanoris/asphanorisbeta/
@@ -40,7 +41,7 @@ src/
 │ ├── application.properties
 │ └── static/
 └── test/ # Pruebas unitarias
-
+```
 
 ## Endpoints Principales
 | Método | Endpoint | Descripción |
@@ -65,3 +66,4 @@ git clone https://github.com/tu-usuario/asphanorisbeta.git
 
 # Acceder a Swagger
 http://localhost:8081/swagger-ui/index.html
+```
