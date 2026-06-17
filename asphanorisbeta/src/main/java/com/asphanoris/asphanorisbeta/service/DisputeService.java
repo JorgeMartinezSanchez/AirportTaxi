@@ -5,7 +5,6 @@ import com.asphanoris.asphanorisbeta.dto.DisputeRequestDTO;
 import com.asphanoris.asphanorisbeta.dto.DisputeResponseDTO;
 import com.asphanoris.asphanorisbeta.repository.IDisputeRepository;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -14,8 +13,12 @@ import java.util.stream.Collectors;
 @Service
 public class DisputeService {
     
-    @Autowired
-    private IDisputeRepository disputeRepo;
+    private final IDisputeRepository disputeRepo;
+    
+    // ✅ Inyección por constructor
+    public DisputeService(IDisputeRepository disputeRepo) {
+        this.disputeRepo = disputeRepo;
+    }
     
     private DisputeResponseDTO convertToDTO(RealDispute dispute) {
         log.debug("Mapeando disputa ID: {} a DTO", dispute.getId());

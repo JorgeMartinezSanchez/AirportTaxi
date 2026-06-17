@@ -7,7 +7,6 @@ import com.asphanoris.asphanorisbeta.factory.*;
 import com.asphanoris.asphanorisbeta.repository.IUserRepository;
 import com.asphanoris.asphanorisbeta.security.PasswordHasherService;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -16,11 +15,14 @@ import java.util.stream.Collectors;
 @Service
 public class UserService {
     
-    @Autowired
-    private IUserRepository userRepo;
+    private final IUserRepository userRepo;
+    private final PasswordHasherService pwdHasher;
     
-    @Autowired
-    private PasswordHasherService pwdHasher;
+    // ✅ Inyección por constructor
+    public UserService(IUserRepository userRepo, PasswordHasherService pwdHasher) {
+        this.userRepo = userRepo;
+        this.pwdHasher = pwdHasher;
+    }
     
     private UserFactory getUserFactory(UserRequestDTO userDto) {
         log.debug("Obteniendo factory para rol: {}", userDto.getRole());

@@ -3,7 +3,6 @@ package com.asphanoris.asphanorisbeta.repository;
 import com.asphanoris.asphanorisbeta.domain.RealDispute;
 import com.asphanoris.asphanorisbeta.entity.DisputeEntity;
 import com.asphanoris.asphanorisbeta.mapper.DisputeMapper;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
@@ -19,8 +18,12 @@ public class PostgreSQLDisputeRepository implements IDisputeRepository {
     @PersistenceContext
     private EntityManager entityManager;
     
-    @Autowired
-    private DisputeMapper disputeMapper;
+    private final DisputeMapper disputeMapper;
+    
+    // ✅ Inyección por constructor
+    public PostgreSQLDisputeRepository(DisputeMapper disputeMapper) {
+        this.disputeMapper = disputeMapper;
+    }
     
     @Override
     public RealDispute addDispute(RealDispute dispute) {

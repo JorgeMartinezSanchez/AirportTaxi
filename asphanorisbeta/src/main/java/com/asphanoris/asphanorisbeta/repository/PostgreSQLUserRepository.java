@@ -3,7 +3,6 @@ package com.asphanoris.asphanorisbeta.repository;
 import com.asphanoris.asphanorisbeta.domain.User;
 import com.asphanoris.asphanorisbeta.entity.UserEntity;
 import com.asphanoris.asphanorisbeta.mapper.UserMapper;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
@@ -19,8 +18,12 @@ public class PostgreSQLUserRepository implements IUserRepository {
     @PersistenceContext
     private EntityManager entityManager;
     
-    @Autowired
-    private UserMapper userMapper;
+    private final UserMapper userMapper;
+    
+    // ✅ Inyección por constructor
+    public PostgreSQLUserRepository(UserMapper userMapper) {
+        this.userMapper = userMapper;
+    }
     
     @Override
     public User addUser(User user) {

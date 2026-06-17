@@ -3,7 +3,6 @@ package com.asphanoris.asphanorisbeta.controller;
 import com.asphanoris.asphanorisbeta.dto.UserRequestDTO;
 import com.asphanoris.asphanorisbeta.dto.UserResponseDTO;
 import com.asphanoris.asphanorisbeta.proxy.UserProxy;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
@@ -12,8 +11,12 @@ import java.util.List;
 @RequestMapping("/api/users")
 public class UserController {
     
-    @Autowired
-    private UserProxy userProxy;
+    private final UserProxy userProxy;
+    
+    // ✅ Inyección por constructor
+    public UserController(UserProxy userProxy) {
+        this.userProxy = userProxy;
+    }
     
     @PostMapping
     public ResponseEntity<UserResponseDTO> addUser(@RequestBody UserRequestDTO userDto) {
@@ -22,7 +25,6 @@ public class UserController {
     
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteUser(@PathVariable Long id) {
-        // No necesitas crear un DTO, pasas el ID directamente
         userProxy.deleteUser(id);
         return ResponseEntity.noContent().build();
     }
@@ -31,13 +33,11 @@ public class UserController {
     public ResponseEntity<UserResponseDTO> modifyUser(
             @PathVariable Long id,
             @RequestBody UserRequestDTO userDto) {
-        // Pasas el ID de la URL y el DTO del body
         return ResponseEntity.ok(userProxy.modifyUser(id, userDto));
     }
     
     @GetMapping("/{id}")
     public ResponseEntity<UserResponseDTO> getUser(@PathVariable Long id) {
-        // Pasas el ID directamente
         return ResponseEntity.ok(userProxy.getUser(id));
     }
     

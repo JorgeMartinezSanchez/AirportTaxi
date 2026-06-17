@@ -3,7 +3,6 @@ package com.asphanoris.asphanorisbeta.repository;
 import com.asphanoris.asphanorisbeta.domain.ConVehicle;
 import com.asphanoris.asphanorisbeta.entity.VehicleEntity;
 import com.asphanoris.asphanorisbeta.mapper.VehicleMapper;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
@@ -19,8 +18,12 @@ public class PostgreSQLVehicleRepository implements IVehicleRepository {
     @PersistenceContext
     private EntityManager entityManager;
     
-    @Autowired
-    private VehicleMapper vehicleMapper;
+    private final VehicleMapper vehicleMapper;
+    
+    // ✅ Inyección por constructor
+    public PostgreSQLVehicleRepository(VehicleMapper vehicleMapper) {
+        this.vehicleMapper = vehicleMapper;
+    }
     
     @Override
     public ConVehicle addVehicle(ConVehicle vehicle) {

@@ -4,17 +4,19 @@ import com.asphanoris.asphanorisbeta.domain.User;
 import com.asphanoris.asphanorisbeta.dto.UserRequestDTO;
 import com.asphanoris.asphanorisbeta.dto.UserResponseDTO;
 import com.asphanoris.asphanorisbeta.service.UserService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import java.util.List;
 
 @Component
 public class UserProxy {
     
-    @Autowired
-    private UserService userService;
-    
+    private final UserService userService;
     private User currentUser;
+    
+    // ✅ Inyección por constructor
+    public UserProxy(UserService userService) {
+        this.userService = userService;
+    }
     
     private boolean isAllowed() {
         return currentUser != null && 

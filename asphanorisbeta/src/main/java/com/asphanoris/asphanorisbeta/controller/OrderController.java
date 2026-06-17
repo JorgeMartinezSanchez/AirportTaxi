@@ -3,7 +3,6 @@ package com.asphanoris.asphanorisbeta.controller;
 import com.asphanoris.asphanorisbeta.dto.OrderRequestDTO;
 import com.asphanoris.asphanorisbeta.dto.OrderResponseDTO;
 import com.asphanoris.asphanorisbeta.service.OrderService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
@@ -12,8 +11,12 @@ import java.util.List;
 @RequestMapping("/api/orders")
 public class OrderController {
     
-    @Autowired
-    private OrderService orderService;
+    private final OrderService orderService;
+    
+    // ✅ Inyección por constructor
+    public OrderController(OrderService orderService) {
+        this.orderService = orderService;
+    }
     
     @PostMapping
     public ResponseEntity<OrderResponseDTO> createOrder(@RequestBody OrderRequestDTO orderDto) {
@@ -22,14 +25,12 @@ public class OrderController {
     
     @PostMapping("/{id}/cancel")
     public ResponseEntity<Void> cancelOrder(@PathVariable Long id) {
-        // Pasas el ID directamente
         orderService.cancelOrder(id);
         return ResponseEntity.noContent().build();
     }
     
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteOrder(@PathVariable Long id) {
-        // Pasas el ID directamente
         orderService.deleteOrder(id);
         return ResponseEntity.noContent().build();
     }

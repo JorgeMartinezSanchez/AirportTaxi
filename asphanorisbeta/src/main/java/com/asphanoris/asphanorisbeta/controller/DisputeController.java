@@ -3,7 +3,6 @@ package com.asphanoris.asphanorisbeta.controller;
 import com.asphanoris.asphanorisbeta.dto.DisputeRequestDTO;
 import com.asphanoris.asphanorisbeta.dto.DisputeResponseDTO;
 import com.asphanoris.asphanorisbeta.proxy.DisputeProxy;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
@@ -12,8 +11,12 @@ import java.util.List;
 @RequestMapping("/api/disputes")
 public class DisputeController {
     
-    @Autowired
-    private DisputeProxy disputeProxy;
+    private final DisputeProxy disputeProxy;
+    
+    // ✅ Inyección por constructor
+    public DisputeController(DisputeProxy disputeProxy) {
+        this.disputeProxy = disputeProxy;
+    }
     
     @PostMapping
     public ResponseEntity<DisputeResponseDTO> createDispute(@RequestBody DisputeRequestDTO disputeDto) {

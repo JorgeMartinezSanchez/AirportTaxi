@@ -3,7 +3,6 @@ package com.asphanoris.asphanorisbeta.repository;
 import com.asphanoris.asphanorisbeta.domain.RealTripOrder;
 import com.asphanoris.asphanorisbeta.entity.TripOrderEntity;
 import com.asphanoris.asphanorisbeta.mapper.OrderMapper;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
@@ -19,8 +18,12 @@ public class PostgreSQLOrderRepository implements IOrderRepository {
     @PersistenceContext
     private EntityManager entityManager;
     
-    @Autowired
-    private OrderMapper orderMapper;
+    private final OrderMapper orderMapper;
+    
+    // ✅ Inyección por constructor
+    public PostgreSQLOrderRepository(OrderMapper orderMapper) {
+        this.orderMapper = orderMapper;
+    }
     
     @Override
     public RealTripOrder addOrder(RealTripOrder order) {

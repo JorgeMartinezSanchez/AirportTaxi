@@ -7,7 +7,6 @@ import com.asphanoris.asphanorisbeta.dto.VehicleResponseDTO;
 import com.asphanoris.asphanorisbeta.factory.VehicleFactory;
 import com.asphanoris.asphanorisbeta.repository.IVehicleRepository;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -16,8 +15,12 @@ import java.util.stream.Collectors;
 @Service
 public class VehicleService {
     
-    @Autowired
-    private IVehicleRepository vehicleRepo;
+    private final IVehicleRepository vehicleRepo;
+    
+    // ✅ Inyección por constructor
+    public VehicleService(IVehicleRepository vehicleRepo) {
+        this.vehicleRepo = vehicleRepo;
+    }
     
     private VehicleFactory vehicleFactory = new VehicleFactory() {
         @Override

@@ -5,7 +5,6 @@ import com.asphanoris.asphanorisbeta.dto.OrderRequestDTO;
 import com.asphanoris.asphanorisbeta.dto.OrderResponseDTO;
 import com.asphanoris.asphanorisbeta.repository.IOrderRepository;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -14,8 +13,12 @@ import java.util.stream.Collectors;
 @Service
 public class OrderService {
     
-    @Autowired
-    private IOrderRepository orderRepo;
+    private final IOrderRepository orderRepo;
+    
+    // ✅ Inyección por constructor
+    public OrderService(IOrderRepository orderRepo) {
+        this.orderRepo = orderRepo;
+    }
     
     private OrderResponseDTO convertToDTO(RealTripOrder order) {
         log.debug("Mapeando orden ID: {} a DTO", order.getId());

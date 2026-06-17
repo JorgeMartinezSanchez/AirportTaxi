@@ -3,7 +3,6 @@ package com.asphanoris.asphanorisbeta.controller;
 import com.asphanoris.asphanorisbeta.dto.VehicleRequestDTO;
 import com.asphanoris.asphanorisbeta.dto.VehicleResponseDTO;
 import com.asphanoris.asphanorisbeta.service.VehicleService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
@@ -12,8 +11,12 @@ import java.util.List;
 @RequestMapping("/api/vehicles")
 public class VehicleController {
     
-    @Autowired
-    private VehicleService vehicleService;
+    private final VehicleService vehicleService;
+    
+    // ✅ Inyección por constructor
+    public VehicleController(VehicleService vehicleService) {
+        this.vehicleService = vehicleService;
+    }
     
     @PostMapping
     public ResponseEntity<VehicleResponseDTO> createVehicle(@RequestBody VehicleRequestDTO vehicleDto) {
@@ -24,7 +27,6 @@ public class VehicleController {
     public ResponseEntity<VehicleResponseDTO> modifyVehicle(
             @PathVariable Long id,
             @RequestBody VehicleRequestDTO vehicleDto) {
-        // Pasas el ID de la URL y el DTO del body
         return ResponseEntity.ok(vehicleService.modifyVehicle(id, vehicleDto));
     }
     

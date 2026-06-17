@@ -4,17 +4,19 @@ import com.asphanoris.asphanorisbeta.domain.User;
 import com.asphanoris.asphanorisbeta.dto.DisputeRequestDTO;
 import com.asphanoris.asphanorisbeta.dto.DisputeResponseDTO;
 import com.asphanoris.asphanorisbeta.service.DisputeService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import java.util.List;
 
 @Component
 public class DisputeProxy {
     
-    @Autowired
-    private DisputeService disputeService;
-    
+    private final DisputeService disputeService;
     private User currentUser;
+    
+    // ✅ Inyección por constructor
+    public DisputeProxy(DisputeService disputeService) {
+        this.disputeService = disputeService;
+    }
     
     private boolean isPassenger() {
         return currentUser != null && currentUser.getRole().toString().equals("PASSENGER");
