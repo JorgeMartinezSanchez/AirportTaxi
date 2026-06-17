@@ -1,0 +1,91 @@
+pipeline {
+    agent any
+
+    tools {
+        maven 'Maven' 
+    }
+
+    environment {
+        PROJECT_PATH = '/app'
+    }
+
+    stages {
+        stage('Checkout') {
+            steps {
+                echo '📦 Clonando repositorio...'
+                checkout scm
+                echo '✅ Checkout completado'
+            }
+        }
+
+        stage('Compile') {
+            steps {
+                echo '🔨 Compilando proyecto...'
+                dir('/app') {
+                    sh 'mvn clean compile'
+                }
+                echo '✅ Compilación exitosa'
+            }
+        }
+
+        stage('Run Tests') {
+            steps {
+                echo '🧪 Ejecutando pruebas...'
+                dir('/app') {
+                    sh 'mvn test'
+                }
+                echo '✅ Pruebas completadas'
+            }
+            post {
+                always {
+                    junit '/app/target/surefire-reports/*.xml'
+                }
+            }
+        }
+
+        stage('Package') {
+            steps {
+                echo '📦 Empaquetando aplicación...'
+                dir('/app') {
+                    sh 'mvn package -DskipTests'
+                }
+                echo '✅ JAR creado exitosamente'
+            }
+            post {
+                success {
+                    archiveArtifacts artifacts: '/app/target/*.jar'
+                }
+            }
+        }
+
+        stage('Deploy') {
+            steps {
+                echo '🚀 Desplegando aplicación...'
+                sh '''
+                    cd /app
+                    # Detener contenedor anterior
+                    docker stop asphanoris-app 2>/dev/null || true
+                    docker rm asphanoris-app 2>/dev/null || true
+                    
+                    # Ejecutar nuevo contenedor
+                    docker run -d \
+                        --name asphanoris-app \
+                        -p 8081:8081 \
+                        -v /app/target:/app \
+                        openjdk:17-jre-slim \
+                        java -jar /app/*.jar
+                '''
+                echo '✅ Despliegue completado'
+            }
+        }
+    }
+
+    post {
+        success {
+            echo '🎉 Pipeline completado exitosamente!'
+        }
+        failure {
+            echo '❌ Pipeline falló!'
+        }
+    }
+}
