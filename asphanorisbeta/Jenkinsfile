@@ -3,7 +3,6 @@ pipeline {
 
     tools {
         maven 'Maven'
-        jdk 'JDK-17' 
     }
 
     environment {
@@ -64,11 +63,8 @@ pipeline {
                 echo '🚀 Desplegando aplicación...'
                 sh '''
                     cd /app
-                    # Detener contenedor anterior
                     docker stop asphanoris-app 2>/dev/null || true
                     docker rm asphanoris-app 2>/dev/null || true
-                    
-                    # Ejecutar nuevo contenedor
                     docker run -d \
                         --name asphanoris-app \
                         -p 8081:8081 \
