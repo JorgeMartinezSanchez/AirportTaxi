@@ -7,6 +7,8 @@ pipeline {
 
     environment {
         PROJECT_PATH = '/app/asphanorisbeta'
+        MAVEN_HOME = '/usr/share/maven'
+        JAVA_HOME = '/usr/lib/jvm/java-17-openjdk-amd64'
     }
 
     stages {
@@ -21,7 +23,7 @@ pipeline {
         stage('Compile') {
             steps {
                 echo '🔨 Compilando proyecto...'
-                dir('/app') {
+                dir('/app/asphanorisbeta') {
                     sh 'mvn clean compile'
                 }
                 echo '✅ Compilación exitosa'
@@ -31,14 +33,14 @@ pipeline {
         stage('Run Tests') {
             steps {
                 echo '🧪 Ejecutando pruebas...'
-                dir('/app') {
+                dir('/app/asphanorisbeta') {
                     sh 'mvn test'
                 }
                 echo '✅ Pruebas completadas'
             }
             post {
                 always {
-                    junit '/app/target/surefire-reports/*.xml'
+                    junit '/app/asphanorisbeta/target/surefire-reports/*.xml'
                 }
             }
         }
@@ -46,14 +48,14 @@ pipeline {
         stage('Package') {
             steps {
                 echo '📦 Empaquetando aplicación...'
-                dir('/app') {
+                dir('/app/asphanorisbeta') {
                     sh 'mvn package -DskipTests'
                 }
                 echo '✅ JAR creado exitosamente'
             }
             post {
                 success {
-                    archiveArtifacts artifacts: '/app/target/*.jar'
+                    archiveArtifacts artifacts: '/app/asphanorisbeta/target/*.jar'
                 }
             }
         }
@@ -62,13 +64,13 @@ pipeline {
             steps {
                 echo '🚀 Desplegando aplicación...'
                 sh '''
-                    cd /app
+                    cd /app/asphanorisbeta
                     docker stop asphanoris-app 2>/dev/null || true
                     docker rm asphanoris-app 2>/dev/null || true
                     docker run -d \
                         --name asphanoris-app \
                         -p 8081:8081 \
-                        -v /app/target:/app \
+                        -v /app/asphanorisbeta/target:/app \
                         openjdk:17-jre-slim \
                         java -jar /app/*.jar
                 '''
