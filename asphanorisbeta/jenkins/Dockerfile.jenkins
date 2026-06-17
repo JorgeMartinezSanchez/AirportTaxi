@@ -2,36 +2,19 @@ FROM jenkins/jenkins:lts-jdk17
 
 USER root
 
-# Instalar plugins necesarios
+# Instalar plugins necesarios (SOLO los esenciales)
 RUN jenkins-plugin-cli --plugins \
-    workflow-aggregator \
     git \
+    workflow-aggregator \
     maven-plugin \
-    docker-workflow \
-    docker-build-step \
-    sonar \
-    email-ext \
-    junit \
-    pipeline-utility-steps \
-    docker-java-api
+    docker-workflow
 
-# Instalar herramientas necesarias
+# Instalar herramientas
 RUN apt-get update && \
     apt-get install -y \
     maven \
     docker.io \
     git \
-    curl \
-    vim \
     && rm -rf /var/lib/apt/lists/*
 
-# Instalar Docker Compose
-RUN curl -L "https://github.com/docker/compose/releases/latest/download/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose && \
-    chmod +x /usr/local/bin/docker-compose
-
-# Configurar Maven
-ENV MAVEN_HOME /usr/share/maven
-ENV PATH $MAVEN_HOME/bin:$PATH
-
-# Cambiar al usuario jenkins
 USER jenkins
