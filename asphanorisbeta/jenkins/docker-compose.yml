@@ -2,9 +2,7 @@ version: '3.8'
 
 services:
   jenkins:
-    build:
-      context: .
-      dockerfile: Dockerfile.jenkins
+    image: jenkins/jenkins:lts-jdk17
     container_name: asphanoris-jenkins
     user: root
     ports:
@@ -15,8 +13,8 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
       - ../asphanorisbeta:/app
     environment:
-      - JENKINS_OPTS="--prefix=/jenkins"
-      - JAVA_OPTS="-Xmx2g"
+      - JAVA_OPTS=-Djenkins.install.runSetupWizard=true
+      - JENKINS_OPTS=--prefix=/jenkins
     restart: unless-stopped
 
 volumes:

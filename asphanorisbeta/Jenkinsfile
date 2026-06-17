@@ -6,7 +6,7 @@ pipeline {
     }
 
     environment {
-        PROJECT_PATH = '/app'
+        PROJECT_PATH = '/app/asphanorisbeta'
     }
 
     stages {
